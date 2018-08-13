@@ -3,10 +3,13 @@
     <head>
         <meta charset="utf-8"/>
         <style>
+         #game {
+             text-align: center;
+             flex-direction: column;
+         }
          #parent-wrapper {
              margin: 10px;
-             height: 60%;
-             width: 30%;
+             display: inline-block;
          }
          .flex-container {
             display: flex;
@@ -19,8 +22,8 @@
             background: blue;
             margin: 1px 0 0 1px;
             flex-grow: 1;
-            height: 25px;
-            width: calc(100% * (1/20) - 1px - 1px)
+            height: 17px;
+            width: calc(100% * (1/20) - 0px - 1px)
          }
          .btn {
             display: inline-block;
@@ -34,14 +37,32 @@
          #pause-game {
              background-color: #bec481;
          }
+         .buttons-group {
+             flex-direction: row;
+         }
+
+         @media only screen and (max-width: 1400px) {
+             .cell {
+                 display: inline-block;
+                 background: blue;
+                 margin: 1px 0 0 1px;
+                 flex-grow: 1;
+                 height: 15px;
+                 width: calc(100% * (1/20) - 0px - 1px)
+             }
+         }
         </style>
     </head>
     <body>
         <header>header</header>
-        <div id="start-game" class="btn">Play game!</div>
-        <div id="pause-game" class="btn">Pause!</div>
-        <div id="parent-wrapper">
-            <div id="playfield" class="flex-container"></div>
+        <div id="game">
+            <div class="buttons-group">
+                <div id="start-game" class="btn">Play game!</div>
+                <div id="pause-game" class="btn">Pause!</div>
+            </div>
+            <div id="parent-wrapper">
+                <div id="playfield" class="flex-container"></div>
+            </div>
         </div>
         <footer>footer</footer>
         <script type="text/javascript" src="snake.js" ></script>
